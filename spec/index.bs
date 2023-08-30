@@ -524,7 +524,7 @@ a federated account.
 <pre class="idl">
   [Exposed=Window, SecureContext]
   interface IdentityCredentialError: DOMException {
-    constructor(optional DOMString message = "", IdentityCredentialErrorInit options);
+    constructor(optional DOMString message = "", optional IdentityCredentialErrorInit options = {});
     readonly attribute DOMString code;
     readonly attribute DOMString url;
   };
@@ -548,7 +548,7 @@ The {{IdentityCredentialError/constructor()}}, given a |realm|, a {{DOMString}} 
 </dl>
 
 <!-- ============================================================ -->
-### The CredentialRequestOptions ### {#browser-api-credential-request-options}
+## The CredentialRequestOptions ## {#browser-api-credential-request-options}
 <!-- ============================================================ -->
 
 This section defines the dictionaries passed into the JavaScript call:
@@ -624,7 +624,7 @@ dictionary IdentityProviderConfig {
 </dl>
 
 <!-- ============================================================ -->
-### The <code>\[[DiscoverFromExternalSource]](origin, options, sameOriginWithAncestors)</code> internal method ### {#browser-api-rp-sign-in}
+## The <code>\[[DiscoverFromExternalSource]](origin, options, sameOriginWithAncestors)</code> internal method ## {#browser-api-rp-sign-in}
 <!-- ============================================================ -->
 
 The {{Credential/[[DiscoverFromExternalSource]](origin, options, sameOriginWithAncestors)}}
