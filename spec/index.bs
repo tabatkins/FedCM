@@ -472,7 +472,7 @@ To <dfn>compute the connection status</dfn> given an {{IdentityProviderConfig}} 
     1. Let |triple| be (|rpOrigin|, |idpOrigin|, |accountId|).
     1. If [=connected accounts set=] [=list/contains=] |triple| , return
         [=compute the connection status/connected=].
-    1. Otherwise, if account| [=map/contains=] {{IdentityProviderAccount/approved_clients}},
+    1. Otherwise, if |account| [=map/contains=] {{IdentityProviderAccount/approved_clients}},
         |account|'s {{IdentityProviderAccount/approved_clients}} [=list/contains=] |provider|'s
         {{IdentityProviderConfig/clientId}}, and third party cookies are available for |idpOrigin|
         on |rpOrigin|, return [=compute the connection status/connected=].
@@ -1421,9 +1421,9 @@ When invoking the {{IdentityProvider/getUserInfo()}} method given an {{IdentityP
         * There does not exist an account |account| such that [=compute the connection status=] of
             |provider|, |account|, and |globalObject| returns
             [=compute the connection status/connected=]. This check can be performed by iterating
-            over the [=connected accounts set=] or by keeping a separate data structure to make this
-            lookup fast.
-        * There is third party cookie access for |configUrl|'s [=url/origin=] on |document|'s
+            over the [=connected accounts set=] or by keeping a separate data structure for faster
+            lookup results.
+        * There is no third party cookie access for |configUrl|'s [=url/origin=] on |document|'s
             [=Document/origin=].
     1. If |configUrl| is failure, throw an "{{InvalidStateError}}" {{DOMException}}.
     1. If |document|'s [=Document/origin=] is not [=same origin=] as |configUrl|'s [=url/origin=],
